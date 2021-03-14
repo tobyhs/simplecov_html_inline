@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description = 'Formatter based on simplecov-html that uses inline/embedded assets'
   s.license = 'MIT'
 
-  s.add_dependency 'simplecov-html', '~> 0.12'
+  s.add_dependency 'simplecov', '~> 0.21'
 
   s.add_development_dependency 'rspec', '~> 3.10'
 
