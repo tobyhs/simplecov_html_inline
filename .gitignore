@@ -2,5 +2,6 @@
 /.byebug_history
 /Gemfile.lock
 /coverage
+/spec/tmp
 
 *.gem
