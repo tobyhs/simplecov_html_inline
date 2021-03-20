@@ -1,3 +1,19 @@
+require 'simplecov'
+
+SimpleCov.start do
+  add_filter { |src_file| !src_file.project_filename.start_with?('/lib/') }
+
+  # Using this odd technique so 'simplecov_html_inline' can be required after
+  # SimpleCov starts coverage
+  formatter_wrapper = Object.new
+  def formatter_wrapper.new
+    SimplecovHtmlInline::Formatter.new
+  end
+  formatter formatter_wrapper
+end
+
+require 'simplecov_html_inline'
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
